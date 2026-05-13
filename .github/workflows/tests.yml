@@ -35,3 +35,6 @@ jobs:
 
       - name: Run BDD tests
         run: pytest test_bdd.py -v
+        env:
+          DISPLAY: :99
+

@@ -14,7 +14,7 @@ def load_test_data():
 @pytest.fixture
 def browser_page():
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False)
+        browser = p.chromium.launch(headless=True)
         pg = browser.new_page()
         yield pg
         browser.close()
