@@ -1,4 +1,4 @@
-name: Playwrite Tests
+name: Playwright Tests
 
 on:
   push:
@@ -12,22 +12,21 @@ jobs:
 
     steps:
       - name: Checkout code
-      - uses: actions/checkout@v3
+        uses: actions/checkout@v3
 
       - name: Set up Python
-      - uses: actions/setup-python@v4
+        uses: actions/setup-python@v4
         with:
           python-version: '3.11'
 
       - name: Install dependencies
-        run:
-          |
+        run: |
           python -m pip install --upgrade pip
           pip install pytest
           pip install playwright
           pip install pytest-bdd
           pip install requests
-          
+
       - name: Install Playwright browsers
         run: playwright install --with-deps chromium
 
